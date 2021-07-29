@@ -31,12 +31,12 @@ if (isset($_POST["export"])) {
     exit;*/
     $filename = "productdetails.csv";
     $result = $export->exportfile($filename);
-    if($result) {
+    if ($result) {
         $_SESSION['message'] =  "error exportinging file!!";
     } else {
         $_SESSION['message'] =  "file exported successfully!!";
         header('location:http://localhost/user/index.php');
-    } 
+    }
 }
 
 ?>
