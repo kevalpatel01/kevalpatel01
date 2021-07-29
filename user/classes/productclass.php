@@ -117,25 +117,25 @@ class products extends database
                 }
                 $row++;
             }
-            foreach($final_result as $column) {
+            foreach ($final_result as $column) {
                 //echo "a";exit;
                 $sku = $column['sku'];
                 $name = $column['name'];
                 $model = $column['model'];
-                $price = $column['price']; 
-            
-            $prevquery = "SELECT id  FROM $table WHERE sku = '" . $sku . "'";
-            $prevresult = $this->conn->query($prevquery);
+                $price = $column['price'];
 
-            if ($prevresult->num_rows > 0) {
+                $prevquery = "SELECT id  FROM $table WHERE sku = '" . $sku . "'";
+                $prevresult = $this->conn->query($prevquery);
 
-                $update = "UPDATE $table SET sku = '$sku',name = '$name', model = '$model', price = '$price' WHERE sku = '.$sku.'";
-                $result = $this->conn->query($update);
-                //echo "a";exit;
-            } else {
-                $sql = "INSERT INTO $table (`sku`,`name`, `model`, `price`) VALUES ( '" . $sku . "','" . $name . "', '" . $model . "','" . $price . "')";
-                $result = $this->conn->query($sql);
-            }
+                if ($prevresult->num_rows > 0) {
+
+                    $update = "UPDATE $table SET sku = '$sku',name = '$name', model = '$model', price = '$price' WHERE sku = '.$sku.'";
+                    $result = $this->conn->query($update);
+                    //echo "a";exit;
+                } else {
+                    $sql = "INSERT INTO $table (`sku`,`name`, `model`, `price`) VALUES ( '" . $sku . "','" . $name . "', '" . $model . "','" . $price . "')";
+                    $result = $this->conn->query($sql);
+                }
                 /*if($result) {
                         return true;
                     //$_SESSION['message'] = "error uploading file!!";
@@ -149,31 +149,29 @@ class products extends database
     }
 
 
-    public function exportfile($filename) {
+    public function exportfile($filename)
+    {
         //$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-    $query = "SELECT * FROM products ORDER BY id asc";
-    $result = $this->conn->query($query);
-    //print_r($result);exit;
-    $filename = "productdetails.csv";
-    $fp = fopen('php://memory', 'w');
-    $fields = array('sku', 'name', 'model', 'price');
-    fputcsv($fp, $fields, ",");
-    
-
-   
-    while ($table = mysqli_fetch_array($result)) {
-        $lineData = array($table['sku'],$table['name'], $table['model'], $table['price']);
-        fputcsv($fp, $lineData, ",");
-        //print_r($lineData);exit;*/
-    }
-    fseek($fp, 0);
-    header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="' . $filename . '";');
-    fpassthru($fp);
-    fclose($fp);
-    exit;
+        $query = "SELECT * FROM products ORDER BY id asc";
+        $result = $this->conn->query($query);
+        //print_r($result);exit;
+        $filename = "productdetails.csv";
+        $fp = fopen('php://memory', 'w');
+        $fields = array('sku', 'name', 'model', 'price');
+        fputcsv($fp, $fields, ",");
 
 
 
+        while ($table = mysqli_fetch_array($result)) {
+            $lineData = array($table['sku'], $table['name'], $table['model'], $table['price']);
+            fputcsv($fp, $lineData, ",");
+            //print_r($lineData);exit;*/
+        }
+        fseek($fp, 0);
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename="' . $filename . '";');
+        fpassthru($fp);
+        fclose($fp);
+        exit;
     }
 }

@@ -45,7 +45,7 @@ class user extends Database
     }
 
 
-    public function userexists($username,$mobileno)
+    public function userexists($username, $mobileno)
     {
         //$conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASSWORD,DB_NAME);
         $table = self::$table;
@@ -54,7 +54,7 @@ class user extends Database
         // echo $sql3;exit;
         //print_r($result);exit;
         if ($result->num_rows > 0) {
-           // echo "a";exit;
+            // echo "a";exit;
             return true;
         } else {
             return false;
@@ -74,5 +74,4 @@ class user extends Database
             return false;
         }
     }
-
 }
