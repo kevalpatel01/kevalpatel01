@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
 
-    </head>
-    <body>
-        <p id="demo"></p>
-        <button onclick="loaddata()">click</button>
+<head>
 
-        <script>
-            function loaddata() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText);
-                        document.getElementById("demo").innerHTML = this.responseText;
-                    }else if (this.readyState == 4 && this.status == 404){
-                        document.getElementById("demo").innerHTML = "file not found.";
-                    }
-                };
+</head>
 
-                xhttp.open('GET',"https://jsonplaceholder.typicode.com/posts",true);
-                xhttp.send();
-            }
-        </script>
-    </body>
+<body>
+    <p id="demo"></p>
+    <button onclick="loaddata()">click</button>
+
+    <script>
+        function loaddata() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    document.getElementById("demo").innerHTML = this.responseText;
+                } else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById("demo").innerHTML = "file not found.";
+                }
+            };
+
+            xhttp.open('GET', "https://jsonplaceholder.typicode.com/posts", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
 </html>
