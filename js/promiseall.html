@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // let p1 = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         console.log('first promise');
+            //         resolve(10);
+            //     }, 1* 1000);
+            // });
+            let promiseCall = function(data, message)  {
+                return function(resolve, reject) {
+                    setTimeout(() => {
+                    console.log(`${message} promise`);
+                    resolve(data);
+                }, data * 100);
+                }
+            };
+
+            // let p2 = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         console.log('second promise failed.');
+            //         reject("failed.");
+            //     }, 2* 1000);
+            // });
+
+            // let p3 = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         console.log('third promise');
+            //         resolve(30);
+            //     }, 3* 1000);
+            // });
+
+            let p1 = new Promise(promiseCall(10,"first"));
+            let p2 = new Promise(promiseCall(20,"second"));
+            let p3 = new Promise(promiseCall(30,"third"));
+            // let p4 = new Promise(function(resolve, reject) {
+            //         reject("the 4th promise is rejected.");
+            // });
+
+            var  total = 0; 
+            Promise.all([p1, p2, p3]).then((result) =>{
+                for (var i in result) {
+                    total += result[i];
+                }
+                console.log(`results: ${result}`);
+                //document.write(`${result}`);
+                console.log(`total: ${total}`);
+                //document.write(`${total}`);  
+            }).catch((error) => {
+                console.log(`results: ${error}`);
+            });
+        </script>
+    </head>
+</html>

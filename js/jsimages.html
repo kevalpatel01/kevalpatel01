@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    
+    <style type="text/css">
+        body {
+            margin: 0;
+            background: #e6e6e6;
+        }
+
+        .showSlide {
+            display: none
+        }
+
+        .showSlide img {
+            width: 100%;
+        }
+
+        .slidercontainer {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .left,
+        .right {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .right {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .left:hover,
+        .right:hover {
+            background-color: rgba(115, 115, 115, 0.8);
+        }
+
+        .content {
+            color: #eff5d4;
+            font-size: 30px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /*div.scroll {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scroll img {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        div.scrollmenu img:hover {
+            background-color: #777;
+        }*/
+        
+
+      
+    </style>
+</head>
+
+<body>
+    <div class="slidercontainer">
+        <div class="showSlide fade">
+            <img src="../user/image/ajanta-and-ellora-caves-aurangabad.webp" width="500px" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/akshardham-temple-delhi.webp" />
+        </div>
+
+        <div class="showSlide fade">
+            <img src="../user/image/umaid-bhavan-palace-jodhpur.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/old-goa-1.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/backwaters-kerala-1.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/ghats-at-varanasi-uttar-pradesh.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/pangong-lake-ladakh.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/jaisalmer-fort-jaisalmer.webp" />
+
+        </div>
+        <div class="showSlide fade">
+            <img src="../user/image/the-red-fort-delhi.webp" />
+
+        </div>
+        
+        <!--<a class="left" onclick="nextSlide(-1)">❮</a>
+        <a class="right" onclick="nextSlide(1)">❯</a>-->   
+
+    </div>
+
+    <script type="text/javascript">
+        var slide_index = 1;
+        displaySlides(slide_index);
+
+        function nextSlide(n) {
+            displaySlides(slide_index += n);
+        }
+
+        function currentSlide(n) {
+            displaySlides(slide_index = n);
+        }
+
+        function displaySlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("showSlide");
+            if (n > slides.length) {
+                slide_index = 1
+            }
+            if (n < 1) {
+                slide_index = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                //console.log("display", slides[i].style.display);
+            }
+            //console.log(slide_index);
+            slides[slide_index - 1].style.display = "block";
+            //console.log(slides);
+            
+
+        }
+    </script>
+
+</body>
+<a class="left" onclick="nextSlide(-1)">❮</a>
+        <a class="right" onclick="nextSlide(1)">❯</a>
+
+    </div>
+
+</html>

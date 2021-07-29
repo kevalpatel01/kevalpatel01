@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>javascript form</title>
+</head>
+
+<body align="center">
+    <h1>
+        CREATE YOUR ACCOUNT
+    </h1>
+    <table cellspacing="2" align="center" cellpadding="8" border="0">
+        <tr>
+            <td>
+                <input type="text" placeholder="enter your name" id="n1" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" placeholder="enter password" id="p1" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" placeholder="confirm your password" id="p2" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="enter your email id" id="e1" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="create" onclick="create_account()" />
+
+    </table>
+    <script type="text/javascript">
+        function create_account() {
+            var n = document.getElementById("n1").value;
+            var p = document.getElementById("p1").value;
+            var cp = document.getElementById("p2").value;
+            var e = document.getElementById("e1").value;
+
+            var latters = /^[A-Za-z]+$/;
+            var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2})+$/;
+
+            if (n == '' || p == '' || cp == '' || e == '') {
+                alert("please fill all details correctly!!");
+            } else if (!latters.test(n)) {
+                alert("please enter only alphabets in name!!");
+            } else if (!email_val.test(e)) {
+                alert("please enter valid email id!!");
+            } else if (p != cp) {
+                alert("password not matching!!");
+            } else if (document.getElementById("p1").value.length > 12) {
+                alert("password maximum length is 15");
+            } else if (document.getElementById("p1").value.length < 6) {
+                alert("password minium length is 6");
+            } else {
+                //document.write("a");
+                window.location = "http://localhost/js/jsimages.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

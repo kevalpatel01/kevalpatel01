@@ -1,0 +1,354 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+<body>
+
+  <h2>JavaScript Booleans</h2>
+
+  <!--<p>Booleans can have two values: true or false:</p>-->
+
+
+
+  <!--<script>
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }/*function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}*//*function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}*/
+//let text= "k p";
+
+};
+document.getElementById("demo").innerHTML= person.fullName();
+</script>-->
+  <!--<button onclick="document.getElementById('demo').innerHTML=Date()">the time is?</button>-->
+  <!--<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>-->
+<select id ="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi</option>
+  <option value="kia">kia</option>
+  <option value="bmw">bmw</option>
+  <option value="tata">tata</option>
+</select>
+<p>Hello World!</p>
+<p id="demo"></p>
+  <script>
+    /*function myFunction() {
+let text = document.getElementById("demo").innerHTML;
+document.getElementById("demo").innerHTML = text.toLowerCase();
+}*/
+    /*let text1 = "Hello";
+    let text2 = "world!";
+    let text3 = text1.concat(" ",text2);
+    document.getElementById("demo").innerHTML=text3;*/
+    /*function myFunction() {
+      let text = "  keval  patel   ";
+      alert(text.trim());
+    }*/
+    //var x = "hello ";
+    //var x = '6';
+    //var y= 7;
+    //console.log(! x >= 7 );
+    /*var name = 'keval Patel';
+    var gender = 'Feale';
+    if (gender == "Male") {
+      document.write("hello mr."+name);
+    } else {
+      document.write("heloo miss." + name);
+    }*/
+    /*var per = prompt("what is your percentage?");
+    if(per >= 80 && per <= 100) {
+      document.write("you are in merit!!");
+    } else if(per >= 60 && per < 80) {
+      document.write("you are in 1 class!!");
+    } else if(per >= 45 && per < 60) {
+      document.write("you are in 2 class!!");
+    } else if(per>= 33 && per < 45){
+      document.write("you are in 3 class!!");
+    }else if(per<33){
+      document.write("you are insane!!");
+    } else {
+      document.write("please enter valid per");
+    }*/
+
+    //x = true;
+    /*x = x ** y;
+    console.time("time");
+    console.warn("something went wrong.");
+    console.timeEnd("time");
+    //document.write(x);
+    //let y = "keval ";
+    //document.write(typeof x);
+    //const z = "patel";
+    //document.write(z);*/
+    //console.log(null === undefined);
+    /*var a = 100;
+    var b;
+    b = "value is"+(a == 100? "True" : "False");
+    document.write(b);*/
+    /*var age = 25;
+    switch(true) {
+      case (age >= 15 && age <= 20): 
+        document.write("you are eligible");
+      break;
+      case  (age >= 21 && age <= 30): 
+        document.write("you are not eligible");
+    break;
+     
+    default:
+      document.write("please enter vaild age");
+    }*/
+    //alert("hello world!!");
+    /*var a = 30;
+    var b = 20;
+    if(a > b) {
+        alert(b + a);
+    }else {
+        alert("value of b:" + b);
+    }*/
+    //var a = prompt("what is your name?");
+    /*if(a) {
+    alert(a);
+    } else {
+      alert("a");
+    }*/
+    //document.write(a);
+    /*function sum(math,eng,sc) {
+      var a = math + eng + sc;
+      return a;
+    }
+    function percentage(tt){
+      var per = tt/300 * 100;
+      document.write(per);
+    }
+    //Keval();
+    //document.write("<br>");
+    //Keval();
+    //patel();
+    //Keval("patel","keval");
+    //Keval("hitesh","patel");
+     //patel(10,20);
+    var total = sum(55,65,70 );
+    percentage(total);*/
+
+    /*function hello() {
+      var a = "keval patel";
+      document.write(a + "<br>");
+    }
+    hello();*/
+    //document.write(a);*/
+    /*var a = 10;
+    var b = 20;
+     
+    try {
+      document.write(c); 
+    } catch {
+      document.write("a is not equal to b <Br>");
+    } finally {
+      document.write(a + b);
+    }*/
+
+    /*function keval() {
+      alert("hello world!!");
+    }
+    /*var a = 1;
+    while(a<=10) {
+      document.write("hello world <br>");
+      a = a + 1;
+    }
+    var a = 1;
+    do {
+      document.write("keval patel<br>");
+      a = a + 1;
+    }while(a<=10);*/
+    /*for(var a = 5;a >= 1;a--) {
+      for( var b = 1; b <=a; b++){
+        document.write(a);
+      }
+      document.write("<br>");
+        
+      
+      //document.write("keval patel<br>");
+    }*/
+    //var ary = [10,20,30,40,50];
+    //var sum = 0;
+    /*var ary = new Array(3);
+    for(var g = 0; g < 3; g++) {
+     ary[g] = prompt("enter here:");
+    }
+    //document.write("<ul>");
+    for(var a = 0; a < 3; a++) {
+    document.write(ary[a] + "<br>");
+    //sum = sum + ary[a];
+    }
+    //document.write("</ul>");
+    //document.write("total :" + sum);
+    */
+   /*var ary = [
+     ["keval",22,"male","b.e"],
+     ["patel",22,"Male","b.e"],
+     ["fef",23,"safa","sds"]
+   ];
+   document.write(ary.length);
+   document.write("<table border='1px'>");
+   for(var a = 0; a < ary.length; a++) {
+    document.write("<tr>");
+     for(var b = 0;b<ary[a].length;b++) {
+       document.write("<td>" + ary[a][b] + "</td>");
+     }
+     document.write("<tr>");
+   }
+   document.write("</table>");*/
+   /*var ary = ["keval",22,"male","b.e"];
+   //let a = "asdfgh";
+   document.write(ary + "<br>");
+   var b = ary.includes("keval");
+   document.write(b);
+   /*var b = ary.indexOf("male");
+   document.write(b);
+   var c = ary.lastIndexOf("keval");
+   document.write(c);
+   /*if(Array.isArray(ary)) {
+     document.write("this is an array");
+   } else {
+     document.write("this is not an array");
+   }
+   /*ary.splice(2,0,"patel");
+   document.write(ary);
+   var ary1 = Array.isArray(ary);
+   document.write(ary1);
+   /*var b = ary.slice(1);
+   document.write(b);
+   //let a1 = a.toUpperCase();
+   //document.write(a1);
+  /* var ary1 =["sdf","fFeewef"];
+   var ary2 = ary.concat(ary1);
+   document.write(ary2 + "<br>");
+   var ary3 = ary2.join("<br>");
+   document.write(ary3 + "<br>");
+   /*ary.shift();
+   document.write(ary + "<br>");
+   ary.unshift("keval");
+   document.write(ary + "<br>");
+   /*ary.pop();
+   document.write(ary + "<br>");
+   ary.push("afasfs");
+   document.write(ary + "<br>");
+   /*ary.sort();
+   document.write(ary + "<br>");
+   ary.reverse();
+   document.write(ary + "<br>");
+   /*ary[0] = "kp";
+   document.write(ary + "<br>");
+   ary[1] = 25;
+   document.write(ary + "<br>");
+   delete ary[1];
+   document.write(ary + "<br>");*/
+   /*var ages = [10,13,18,20];
+   document.write(ages +"<br><br>");
+
+   var b = ages.findIndex(checkAdult);
+   document.write(b +"<br><br>");
+   /*var b = ages.some(checkAdult);
+   document.write(b + "<br><br>");
+   function checkAdult(age) {
+     return age >= 18;
+   }*/
+   /*var ages = [10,13,18,20];
+   document.write(ages +"<br><br>");
+
+   var b = ages.filter(checkAdult);
+   document.write(b +"<br><br>");
+   /*var b = ages.some(checkAdult);
+   document.write(b + "<br><br>");
+   function checkAdult(age) {
+     return age >= 18;
+   }*/
+   /*var a = ["keval","hiteshbhai","patel"];
+   a.forEach(loop);
+   function loop(value, index) {
+     document.write(index + value + "<br>")
+   };
+   /*a.fill("legend");
+   document.write(a);*/
+   /*var a = {
+     fname : 'keval' ,
+     lname : 'patel',
+     age : '22',
+     webSeries : ['got','vikings','moneyheist'],
+     living : {
+      'city' : 'ahmedabad',
+      'country' : 'india'
+     },
+     salary : function() {
+       return 25000;
+     },
+     fullname : function() {
+       return this.fname + " " + this.lname;
+     }
+   }
+   document.write(a.living.city);
+   console.log(a);*/
+   function hello() {
+      //var a = "keval patel";
+      //document.write(a + "<br>");
+      alert("hello everyone");
+    }
+    //hello();
+ function myFunction() {
+   var x = document.getElementById("mySelect").value;
+   document.getElementById("demo").innerHTML = "you selected: " + x;
+ }
+ $(document).ready(function() {
+   var myElements = $("p");
+   $("#demo").text("the text from the  paragraph is:" + myElements[0].innerHTML);
+ });
+ var person = new Object();
+ person.firstName = 'keval';
+ person.lastName = 'patel';
+ document.write(person.firstName);
+ console.log(person);
+ var a = 
+   {fname : 'keval',
+   lname : 'patel'};
+ /*console.log(a);
+ for(var b=0;b<a.length;b++) {
+   document.write(a[b].fname + " " + a[b].lname + "<br>");
+ }*/
+ for(var key in a ){
+   document.write(key + " " + a[key] + "<br>");
+ }
+ //var ary = [11,23,34,45];
+ var ary = [{fname : "keval",lname : "patel"},
+            {fname : "hiteshbhai",lname : "patel"}
+          ];
+ var b = ary.map(test);
+ document.write(b);
+ function test(x) {
+   return x.fname + " " + x.lname;
+ }
+
+   </script>
+  <!--<p id="demo"></p>
+
+<script>
+let x = "John";        // x is a string
+let y = new String("John");  // y is an object
+
+document.getElementById("demo").innerHTML =
+typeof x + "<br>" + typeof y;*/
+
+</script>-->
+  <!--<h1 id= "main">keval <span>patel</span></h1>-->
+  <button onclick="hello()">click here</button>
+  <p>click here</p>
+</body>
+
+</html>

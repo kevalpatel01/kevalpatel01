@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    function prom() {
+    return new Promise(function(resolve, reject){
+        console.log("please wait!!");
+        document.write("please wait!!");
+        //var c = a/b;
+        setTimeout(() => {
+        //     if(a,b) {
+        //     resolve(`${c}`);
+        // } else {
+        //     reject("failed");
+        // }
+        $.get("readme.txt",function(data){
+            resolve(data);
+        }).fail(err => {
+            reject("fail to load json.");
+        })
+
+        }, 2000)
+        
+    });
+}
+    
+    let onsuccess = (result) => {
+        console.log(result);
+        document.write(result);
+    }
+
+    let onfail = (error) => {
+        console.log(error);
+    }
+
+    prom().then((result) => {
+        console.log(result);
+        document.write(result);    
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    // console.log(prom(false));
+</script>
+    </head>
+    <body>
+
+    </body>
+</html>
