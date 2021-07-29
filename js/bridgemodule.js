@@ -1,1 +1,1 @@
-export {user} from "./exportmodule.js";
+export { user } from "./exportmodule.js";
