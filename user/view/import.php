@@ -3,9 +3,9 @@ session_start();
 //include('../classes/userdatabase.php');
 include('../classes/productclass.php');
 $import = new products();
-if(isset($_POST["Import"])){
-       
-   /* $filename=$_FILES["filename"]["tmp_name"];  
+if (isset($_POST["Import"])) {
+
+  /* $filename=$_FILES["filename"]["tmp_name"];  
     if($_FILES["filename"]["size"]>0){ 
     //$file = fopen($filename, "r");
     $file = fopen($filename, 'r');
@@ -44,37 +44,38 @@ if(isset($_POST["Import"])){
            //fclose($file);
         }*/
 
-        $result = $import->importfile($filename); 
-        if($result) {
-          $_SESSION['message'] =  "error uploading file!!";
-      } else {
-          $_SESSION['message'] =  "file uploaded successfully!!";
-          header('location:http://localhost/user/index.php');
-      } 
-
-      } 
+  $result = $import->importfile($filename);
+  if ($result) {
+    $_SESSION['message'] =  "error uploading file!!";
+  } else {
+    $_SESSION['message'] =  "file uploaded successfully!!";
+    header('location:http://localhost/user/index.php');
+  }
+}
 ?>
 
 <html>
+
 <body>
-<link rel="stylesheet" href="../css/style.css"/>
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    
+  <link rel="stylesheet" href="../css/style.css" />
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
 
 
-    <div class="fadeIn first">
-      <img src="https://icon-library.com/images/excel-sheet-icon/excel-sheet-icon-18.jpg" id="icon" alt="User Icon" />
+
+      <div class="fadeIn first">
+        <img src="https://icon-library.com/images/excel-sheet-icon/excel-sheet-icon-18.jpg" id="icon" alt="User Icon" />
+      </div>
+
+      <form action="import.php" method="POST" enctype="multipart/form-data">
+        <label>Select File</label>
+        <input type="file" name="filename" id="myfile" accept=".csv" required>
+
+        <button type="submit" id="submit" name="Import">Import</button>
+      </form>
     </div>
-
-<form  action="import.php" method="POST" enctype="multipart/form-data">
-<label>Select File</label>
-<input type="file" name="filename" id="myfile" accept=".csv" required>
-
-<button type="submit" id="submit" name="Import">Import</button>
-</form>
-</div>
-</div>
+  </div>
 
 </body>
+
 </html>
