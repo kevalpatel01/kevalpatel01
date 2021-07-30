@@ -83,7 +83,7 @@ if(isset($_POST['register'])) {
 
     
     <div id="formFooter">
-      <a class="underlineHover" href="http://localhost/user/index.php"><h2>login yourself</h2></a>
+      <a class="underlineHover" href="http://localhost/projects/user/index.php"><h2>login yourself</h2></a>
     </div>
 
   </div>
